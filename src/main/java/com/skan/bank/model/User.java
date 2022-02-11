@@ -16,8 +16,8 @@ public class User {
     @Column(name = "last_name")
     private String lastName;
 
-    @Column(name = "account_code")
-    private String accountCode;
+    @Column(name = "username")
+    private String username;
 
     @Column(name = "password")
     private String password;
@@ -25,10 +25,10 @@ public class User {
     public User() {
     }
 
-    public User(String firstName, String lastName, String accountCode, String password) {
+    public User(String firstName, String lastName, String username, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.accountCode = accountCode;
+        this.username = username;
         this.password = password;
     }
 
@@ -56,12 +56,12 @@ public class User {
         this.lastName = lastName;
     }
 
-    public String getAccountCode() {
-        return accountCode;
+    public String getUsername() {
+        return username;
     }
 
-    public void setAccountCode(String accountCode) {
-        this.accountCode = accountCode;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -77,11 +77,11 @@ public class User {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return id.equals(user.id) && firstName.equals(user.firstName) && lastName.equals(user.lastName) && accountCode.equals(user.accountCode) && password.equals(user.password);
+        return id.equals(user.id) && firstName.equals(user.firstName) && lastName.equals(user.lastName) && username.equals(user.username) && password.equals(user.password);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, firstName, lastName, accountCode, password);
+        return Objects.hash(id, firstName, lastName, username, password);
     }
 }
