@@ -1,6 +1,7 @@
 package com.skan.bank.model;
 
-import org.springframework.boot.actuate.endpoint.OperationType;
+
+import com.skan.bank.model.enums.OperationType;
 
 import javax.persistence.*;
 import java.time.Instant;
@@ -13,6 +14,7 @@ public class Operation {
     private Long id;
 
     @Column(name = "type")
+    @Enumerated(EnumType.STRING)
     private OperationType type;
 
     @Column (name="date")

@@ -16,6 +16,7 @@ public class Account {
     private Long id;
 
     @Column(name = "account_type")
+    @Enumerated(EnumType.STRING)
     private AccountType accountType ;
 
     @Column(name = "balance")
@@ -25,6 +26,7 @@ public class Account {
     private Instant lastOperationDate;
 
     @Column(name="currency")
+    @Enumerated(EnumType.STRING)
     private Currency currency;
 
     @OneToOne(cascade = CascadeType.ALL)
